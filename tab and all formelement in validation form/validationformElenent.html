@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jquery Validation using all type form Element</title>
+        <meta charset="utf-8">
+        <meta name="viewpoint" content="width=device-width,initial-scale.1">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+
+        
+
+    </head>
+    <body>
+        <div class="container">
+            <h3><u>JQUERY VALIDATION</u></h3>
+
+            <form style="width: 50%;" id="tempform" autocomplete="off">
+                <div class="form-group">
+                    <label for="user">First Name:</label>
+                    <input type="text" class="form-control" id="userfirstname" name="userfirstname">
+                </div>
+                <div class="form-group">
+                    <label for="user">Last Name:</label>
+                    <input type="text" class="form-control" id="userlastname" name="userlastname">
+                </div>
+                <div class="form-group">
+                    <label for="user">Email:</label>
+                    <input type="text" class="form-control" id="useremail" name="useremail">
+                </div>
+                <div class="form-group">
+                    <label for="user">Mobile number</label>
+                    <input type="text" class="form-control" id="usernumber" name="usernumber">
+                </div>
+                <div class="form-group">
+                    <label for="user">Password:</label>
+                    <input type="text" class="form-control" id="userpassword" name="userpassword">
+                </div>
+                <div class="form-group">
+                    <label for="user">Comment:</label>
+                    <input type="text" class="form-control" id="usercomment" name="usercomment">
+                </div>
+                <div class="radio">
+
+                    <label><input type="radio" id="usergender"name="usergender" value="mail" checked="checked">Male</label>
+
+                </div>
+
+
+
+
+                <div class="radio">
+
+                    <label><input type="radio" id="usergender"name="usergender" value="femail" >Female</label>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+
+                    <label for="usercity">Select City:</label>
+
+                    <select class="form-control" id="usecity" name="usecity">
+
+                        <option value="0">Select...</option>
+
+                        <option value="1">Delhi</option>
+
+                        <option value="2">Mumbai</option>
+
+                        <option value="3">Chennai</option>
+
+                        
+
+                        
+
+                    </select>
+
+                </div>
+
+
+
+
+                <label for="sell">Select Favourite Game:</label>
+
+                <div class="checkbox">
+
+                    <label><input type="checkbox" id="usergame"value="cricket" checked="checked">Cricket</label>
+
+                </div>
+
+                <div class="checkbox">
+
+                    <label><input type="checkbox" id="usergame"value="chess">Chess</label>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+
+                    <label for="user">Image upload:</label>
+
+                    <input type="file" class="form-control" id="userimage"name="userimage">
+
+                </div>
+
+                <input type="button" onclick="save()" value="submit">
+
+                
+
+            </form>   
+
+         </div> 
+
+
+
+
+                    
+
+    </body>
+
+</html>
+
+
+
+
+<script type="text/javascript">
+
+ 
+
+
+
+
+function save() {
+
+   debugger;
+  var fname =$("#userfirstname").val();
+  
+  if(fname=='')
+  {
+  swal("Please Enter First Name")
+  return fasle;
+  }
+  
+  if($("#userlastname").val()=='')
+  {
+  swal("Please Enter Last Name")
+  return fasle;
+  }
+
+  
+  if($("#useremail").val()=='')
+  {
+  swal("Please Enter an  email")
+  return fasle;
+  }
+
+
+  
+
+  if($("#usernumber").val()=='')
+  {
+  swal("Please Enter Mobile Number")
+  return fasle;
+  }
+
+  
+
+  
+  if($("#userpassword").val()=='')
+  {
+  swal("Please Enter Password")
+  return fasle;
+  }
+
+  
+  
+  if($("#usercomment").val()=='')
+  {
+  swal("Please Enter Comment")
+  return fasle;
+  }
+
+
+  if($("#usecity").val()==0)
+  {
+  swal("Please Select City")
+  return fasle;
+  }
+
+
+
+  if($('#userimage').val() == ''){
+swal("Please select the file to upload");   
+return false; 
+} 
+
+                    swal({
+
+                title: 'Do you want to Submit?',
+
+                type: "warning",
+
+                confirmButtonText: "yes",
+
+                showCancelButton: true,
+
+                cancelButtonText: "no", 
+
+                }).then((result) => {
+
+            
+
+                
+
+                        alert("Data Submitted Successfully");
+
+            $("form[name='tempform']").submit();
+
+            
+
+                        
+
+                
+
+                    
+
+            
+
+                return true;
+
+                })
+
+                    
+
+               
+
+    
+
+            
+
+
+
+
+}
+
+
+
+
+</script>
